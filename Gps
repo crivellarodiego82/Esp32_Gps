@@ -1,0 +1,29 @@
+// Ricezione 2  Trasmissione 4 Modulo Neo6m (File per IDE Arduino)
+ 
+#include <SoftwareSerial.h>
+#include <Gpsneo.h>
+
+
+Gpsneo gps;
+
+char link[60];
+
+
+// Commutazione in seriale software
+SoftwareSerial ss(4, 2);
+
+void setup(){
+  Serial.begin(9600);
+  ss.begin(9600);
+}
+
+void loop(){
+  while (ss.available() > 0){
+    // Ricezione dati GPS
+    byte gpsData = ss.read();
+    Serial.write(gpsData);
+
+gps.Google(link)
+    
+  }
+}
